@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<style type="text/css">
+			.drag { position: absolute; }
+			.other { position: absolute; }
+		</style>
+	</head>
+	<body>
+		<h2>The Board!</h2>
+		<p>
+			This is the board. You may notate new games or alter and analyze</br>
+			old ones here. I sincerely hope that you find this useful and</br>
+			worthwhile.
+		</p>
+		</br></br></br></br></br>
+		<div class="other" id="board">
+			<img src="/board_images/board/board.gif"><img src="/board_images/board/board.gif"><img src="/board_images/board/board.gif"><img src="/board_images/board/board.gif"></br>
+			<img src="/board_images/board/board.gif"><img src="/board_images/board/board.gif"><img src="/board_images/board/board.gif"><img src="/board_images/board/board.gif"></br>
+			<img src="/board_images/board/board.gif"><img src="/board_images/board/board.gif"><img src="/board_images/board/board.gif"><img src="/board_images/board/board.gif"></br>
+			<img src="/board_images/board/board.gif"><img src="/board_images/board/board.gif"><img src="/board_images/board/board.gif"><img src="/board_images/board/board.gif"></br>
+		</div>
+		<p class="drag" id="original">{{ game }}</p>
+		<p class="drag" id="base">{{ base_name }}</p>
+		<p class="drag" id="index">{{ index }}</p>
+		<img src="/board_images/board/Indicator.png" class="other" id="Indicator">
+		<div id="notes" class="other"></div>
+		<script type="text/javascript" src="/js_files/board.js">
+		</script>
+	</body>
+</html>
+		

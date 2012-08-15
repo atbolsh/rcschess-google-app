@@ -1,0 +1,57 @@
+<html>
+	<body>
+		<p>
+			Please select the appropriate parameters for the game.</br>
+			The first option allows you to save to any existing</br>
+			database or create your own by the "add an option" button</br>
+			(if you create several options, it will only save the one</br>
+			you select). The named parameters are mandatory;</br>
+			the ones below that are not.</br>
+		</p>
+		<button id="priest">add an option</button></br></br>
+		<form action="/preboard/saving/" method="post">
+			<div><select name="base_name" id="sacred">
+				{% for base in bases %}
+					<option value="{{ base.name }}">{{base.name}}</option>
+				{% endfor %}
+			</select></div></br>
+			<div>White</br>
+					<textarea name="White" rows="1" cols="10"></textarea>
+			</div></br>
+			<div>Black</br>
+				<textarea name="Black" rows="1" cols="10"></textarea>
+			</div></br>
+			<div>Event</br>
+				<textarea name="Event" rows="1" cols="10"></textarea>
+			</div></br>
+			<div>Date</br>
+				<textarea name="Date" rows="1" cols="10"></textarea>
+			</div>
+			<div>Result</br>
+				<textarea name="Result" rows="1" cols="10"></textarea>
+			<div>
+			{% for x in tail %}
+				<div>
+					<textarea name="first{{ x }}" rows="1" cols="10" ></textarea>
+					<textarea name="second{{ x }}" rows="1" cols="10" ></textarea>
+				</div></br>
+			{% endfor %}
+			<div><input type="submit" value="save"></div>
+		</form>
+		<script type="text/javascript">
+			document.getElementById("priest").addEventListener("click", add, false);
+
+			function add(){
+				var p = prompt("Name the new database");
+				if(p){
+					document.getElementById("sacred").innerHTML += "<option value=\"" + p + "\">" + p + "</option>";
+				}
+				else{
+					alert("Error: base name must be non-empty");
+				}
+			}
+		</script>
+
+	</body>
+</html>
+

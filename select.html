@@ -1,0 +1,17 @@
+<html>
+	<body>
+		<p>
+			Please select the database that you would</br>
+			like to edit from the list below. If you would</br>
+			like to start a new database, select the last</br>
+			link. </br>
+		</p></br></br></br>
+		{% for base in bases %}
+				<a href="selected/?dir_name={{ base.name }}">{{base.name}}</a></br>
+		{% endfor %}
+				<a href="selected/?dir_name=">Start a new database</a></br>
+		</br></br></br>
+		<a href = "{{ main_page_url }}">Back to the Main Page</a></br>
+		<a href = "{{ user_url }}"> {{ user_url_linktext }}</a>
+	</body>
+</html>

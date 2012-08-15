@@ -1,0 +1,25 @@
+<html>
+	<body>
+		<p>
+			The game is below. The top field is the</br>
+			directory in which it is currently saved;</br>
+			the middle is the index at which it is</br>
+			currently saved, and the final is the</br>
+			pgn as it is now. Edit the pgn, and press</br>
+			the 'save' button. Note: if you wish to tack</br>
+			this game onto the end of another database,</br>
+			type the name of that database (exactly)</br>
+			into the top field, and a very large number</br>
+			(such as 10000) into the middle field.</br>
+		</p>
+		<form action = "/edit/saving/" method = "post">
+			<div><textarea name = "base_name" rows = "1" cols = "10">{{ base_name }}</textarea></div>
+			<div><textarea name = "index" rows = "1" cols = "10">{{ index }}</textarea></div>
+			<div><textarea name = "game" rows = "100" cols = "300">{{ game }}</textarea></div>
+			<div><input type="submit" value="save"></div>
+		</form></br>
+		<a href = "{{ main_page_url }}">Back to the Main Page</a></br>
+		<a href = "{{ user_url }}"> {{ user_url_linktext }}</a>
+	</body>
+</html>
+

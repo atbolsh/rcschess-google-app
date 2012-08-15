@@ -1,0 +1,17 @@
+<html>
+	<body>
+		<p>
+			Below is a list of all the games in the</br>
+			database that you selected. Choose the</br>
+			one that you would like to view.</br>
+		</p>
+		{% for game in games %}
+			<a href="{{ view_url }}?game_name={{ game }}">{{ game }}</a></br>
+		{% endfor %}
+		</br></br>
+		<a href = "{{ view_lots_url }}">View Whole Database</a>
+		</br></br></br>
+		<a href = "{{ main_page_url }}">Back to the Main Page</a></br>
+		<a href = "{{ user_url }}"> {{ user_url_linktext }}</a>
+	</body>
+</html>

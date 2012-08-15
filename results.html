@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<p>
+			These are your search results. You can click on</br>
+			any one game to see it, or use the links at the</br>
+			bottom to search again, search only through the</br>
+			remaining files, or view all the (unique) games</br>
+
+		</p>
+		</br></br>
+		{% for game in valid %}
+			<a href="{{ view_url }}?game_name={{ game }}">{{ game }}</a></br>
+		{% endfor %}
+		</br></br>
+		<a href = "{{ plain_search_url }}">Search Again</a></br>
+		<a href = "{{ iter_search_url }}">Search Through Remaining</a></br>
+		<a href = "{{ view_all_url }}">View All Games</a></br>
+		</br></br></br>
+		<a href = "{{ main_page_url }}">Back to the Main Page</a></br>
+		<a href = "{{ user_url }}"> {{ user_url_linktext }}</a>
+	</body>
+</html>

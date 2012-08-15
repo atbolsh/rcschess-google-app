@@ -1,0 +1,19 @@
+<html>
+	<body>
+		<p>
+			Welcome to the uploading games page.</br>
+			To use this page, enter the name of the</br>
+			database that you wish to alter (or</br>
+			create) in the top, narrow field, and</br>
+			paste the pgn-format games into the</br>
+			bottom field, and press the button.</br>
+		</p>
+		<form action = "/add/selected/uploading/" method = "post">
+			<div><textarea name = "name" rows = "1" cols = "10">{{ dir_name }}</textarea></div>
+			<div><textarea name = "content" rows = "1000" cols = "300"></textarea></div>
+			<div><input type="submit" value="submit games"></div>
+		</form></br>
+		<a href = "{{ main_page_url }}">Back to the Main Page</a></br>
+		<a href = "{{ user_url }}"> {{ user_url_linktext }}</a>
+	</body>
+</html>

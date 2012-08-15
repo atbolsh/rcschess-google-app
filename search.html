@@ -1,0 +1,20 @@
+<html>
+	<body>
+		<p>
+			Please select all the databases that</br>
+			you would like us to search through.</br>
+		</p>
+		</br></br>
+		<form action = "/getgames/" method = "post">
+			<div>
+				{% for base in bases %}
+					<input type = "checkbox" name = "{{ base.name }}" value = "{{ base.name }}" />{{ base.name }}</br>
+				{% endfor %}
+			</div>
+			<div><input type="submit" value="submit dabases"></div>
+		</form>
+		</br></br></br>
+		<a href = "{{ main_page_url }}">Back to the Main Page</a></br>
+		<a href = "{{ user_url }}"> {{ user_url_linktext }}</a>
+	</body>
+</html>

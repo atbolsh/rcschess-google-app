@@ -1,0 +1,14 @@
+application: rcschess
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /js_files
+  static_dir: js_files
+
+- url: /board_images
+  static_dir: board_images
+
+- url: /.*
+  script: main.py

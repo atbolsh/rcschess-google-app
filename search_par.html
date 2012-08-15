@@ -1,0 +1,42 @@
+<html>
+	<body>
+		<p>
+			This page is one level of searching. Type in a set of parameters below, in</br>
+			the first field, and a set of values in the second field, separated by a</br>
+			semicolon and a space. The third field is all of the games included in the search</br>
+			so far; feel free to remove any by hand.</br></br>
+		</p>
+		<p>
+			The way that this works is that, if ANY of the parameters have ANY of the values,</br>
+			the game will be returned in the search</br>
+			results. For instance, if you put</br></br>
+			White; Black</br></br>
+			into the first field, and</br></br>
+			Dennis Bolshakov; Luke Stephens</br></br>
+			into the second, the search will return all games where EITHER Dennis OR Luke</br>
+			play EITHER White OR Black; in other words, all games games played by Luke or Dennis.</br>
+			If, instead, you want all games with Dennis as White AND Luke as Black, search first for</br>
+			"White" and "Dennis Bolshakov", then use the "search through remaining" option on</br>
+			the search page and search for "Black" and "Luke Stephens."</br></br>
+		</p>
+		<p>
+			For your convenience, given is a list of common attributes in games.</br></br>
+			White, Black, Event, Site, Date, Round, Result, PlyCount,</br>
+			EventDate, TimeControl, ECO, Annotator, Opening.</br></br>
+			This is not a comprehensive list.</br></br>
+		</p>
+		</br></br></br>
+		<form action = "/search/dyno/" method = "post">
+			<div>Parameters</br>
+				<textarea name = "parameters" rows = "1" cols = "100"></textarea></br>
+			</div>
+			<div>Values</br>
+				<textarea name = "values" rows = "1" cols = "100"></textarea></br>
+			<div><input type = "submit" value = "Search"></div>
+		</form>
+		</br>
+		<a href = "{{ main_page_url }}">Back to the Main Page</a></br>
+		<a href = "{{ user_url }}"> {{ user_url_linktext }}</a>
+	</body>
+</html>
+			
