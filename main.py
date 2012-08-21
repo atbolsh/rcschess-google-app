@@ -144,7 +144,7 @@ class MainPage(webapp.RequestHandler):
 		t = test_user(self, MAIN_PAGE)
 
 		search_url = t[3][0] + 'search/' + t[3][1]
-		add_url = t[3][0] + 'add/' + t[3][1]
+		add_url = t[3][0] + 'add/selected/' + t[3][1]
 		browse_url = t[3][0] + 'browse/' + t[3][1]
 		board_url = t[3][0] + 'preboard/' + t[3][1]
 
@@ -347,12 +347,16 @@ class UploadPage(webapp.RequestHandler):
 	def get(self):
 #		print ""
 #		BUG!!!!! Does not recognise non-ASKII characters, including russian. To be fixed tomorrow.
+		storage_name = self.request.get('storage_name')
+		desired = storage_key(storage_name)
+		bases = Database.all().ancestor(desired)
 
 		t = test_user(self, ADD_GAMES)
 		dir_name = self.request.get('dir_name')
 
 		template_values = {'user_url':t[1], 'user_url_linktext':t[2],
-				'main_page_url':MAIN_PAGE_URL, 'dir_name': dir_name}
+				'main_page_url':MAIN_PAGE_URL, 'dir_name': dir_name,
+				'bases':bases}
 		path = os.path.join(os.path.dirname(__file__), t[0])
 
 		self.response.out.write(template.render(path, template_values))
@@ -363,7 +367,7 @@ class UploadPageDyno(webapp.RequestHandler):
 		desired = storage_key(storage_name)
 		bases = Database.all().ancestor(desired)
 
-		d = get_database(bases, self.request.get('name'), desired)
+		d = get_database(bases, self.request.get('base_name'), desired)
 #		d.content = db.Text(sa.modify(str(d.content))) + db.Text(sa.modify(self.request.get('content')))
 
 #		Running into problems with the alternate encoding schemes: if the string in the input already contains
